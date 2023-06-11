@@ -1,6 +1,6 @@
 public class EnvironmentExe {
   public static void main(String[] args) {
-    HelloWorld hw=new HelloWorld();
+    EnvironmentExe hw=new EnvironmentExe();
     hw.envExe(args[0]);
   }
   
