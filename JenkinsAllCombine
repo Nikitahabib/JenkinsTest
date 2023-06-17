@@ -1,0 +1,46 @@
+def value="prod"
+pipeline {
+    agent any
+    
+    parameters {
+        string(name: "DEPLOY_ENV")
+    }
+    stages {
+        stage('GetValueFromUser'){
+            
+               input {
+                message "Enter Enviornment"
+                ok "Yes"
+                parameters {
+                    string(name: "DEPLOY_ENV")
+                }
+                 
+                
+               }
+
+            steps {
+                echo "Deploy to the ${DEPLOY_ENV} environment."
+                
+                script{
+                    value= "${DEPLOY_ENV}"
+                }
+            }
+        }
+        
+        stage('PassValueAssParameter'){
+            environment{
+                ENVValue="${value}"
+                    
+            }
+            steps{
+                echo "Deploy to the ${env.ENVValue} environment."
+                git branch: 'main',  url: 'https://github.com/Nikitahabib/JenkinsTest.git'
+                bat """javac EnvironmentExe.java
+                java EnvironmentExe $ENVValue"""
+            }
+            
+        }
+        
+    }
+    
+}
