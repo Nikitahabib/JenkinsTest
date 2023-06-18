@@ -1,4 +1,5 @@
 From hello-world
 ENV JENKINS_HOME = abc
 #RUN echo 'Jenkin home value'
-RUN echo "$JENKINS_HOME"
+CMD ["Hello\tWorld"]
+RUN echo $JENKINS_HOME
