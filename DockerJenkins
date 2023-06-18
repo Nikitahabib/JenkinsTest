@@ -1,3 +1,3 @@
 From jenkins/jenkins
 
-RUN |10 TARGETARCH=amd64 COMMIT_SHA=66baa1889cc07d0a245b383f8adf80963fd51e41 user=jenkins group=jenkins uid=1000 gid=1000 http_port=8081 agent_port=50000 JENKINS_HOME=/var/jenkins_home REF=/usr/share/jenkins/ref /bin/sh -c mkdir -p $JENKINS_HOME && chown ${uid}:${gid} $JENKINS_HOME && groupadd -g ${gid} ${group} && useradd -d "$JENKINS_HOME" -u ${uid} -g ${gid} -l -m -s /bin/bash ${user} # buildkit
+RUN TARGETARCH=amd64 COMMIT_SHA=66baa1889cc07d0a245b383f8adf80963fd51e41 user=jenkins group=jenkins uid=1000 gid=1000 http_port=8081 agent_port=50000 JENKINS_HOME=/var/jenkins_home REF=/usr/share/jenkins/ref /bin/sh -c mkdir -p $JENKINS_HOME && chown ${uid}:${gid} $JENKINS_HOME && groupadd -g ${gid} ${group} && useradd -d "$JENKINS_HOME" -u ${uid} -g ${gid} -l -m -s /bin/bash ${user} # buildkit
