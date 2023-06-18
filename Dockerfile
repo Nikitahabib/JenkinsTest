@@ -1,4 +1,4 @@
-ARG http_port=8081
+ARG HTTPPORT=8081
 From jenkins/jenkins
 RUN echo "port value"
-RUN echo $http_port
+RUN echo $HTTPPORT
