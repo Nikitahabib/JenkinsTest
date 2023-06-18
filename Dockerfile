@@ -1,5 +1,5 @@
 FROM hello-world
-WORKDIR /bin/bash
+WORKDIR /bin/sh
 #FROM microsoft/nanoserver
 #COPY testfile.txt c:\
 #RUN dir c:\
