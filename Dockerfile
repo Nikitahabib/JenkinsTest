@@ -1,3 +1,5 @@
-FROM node:16-alpine
+From jenkins/jenkins
 
-RUN apk add -U git curl
+ARG http_port=8081
+
+RUN echo "Port value"$http_port
