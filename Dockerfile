@@ -1,5 +1,3 @@
-
-From jenkins/jenkins
-ARG http_port=8081
-RUN echo "port value"
-RUN echo $http_port
+From hello-world
+ENV JENKINS_HOME abc
+RUN echo "Jenkin home value" $JENKINS_HOME
