@@ -1,7 +1,8 @@
-#From hello-world
-FROM microsoft/nanoserver
-COPY testfile.txt c:\
-RUN dir c:\
+FROM hello-world
+WORKDIR /bin/bash
+#FROM microsoft/nanoserver
+#COPY testfile.txt c:\
+#RUN dir c:\
 ENV JENKINS_HOME = abc
 #RUN dir c:\
 #RUN echo 'Jenkin home value'
