@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Build stage of pipeline'
+                git branch: 'main',  url: 'https://github.com/Nikitahabib/JenkinsTest.git'
+            }
+        }
+        
+        stage('Deployment') {
+            steps {
+                echo 'Deployment stage of pipeline'
+                bat '''javac HelloWorld.java'''
+            }
+        }
+        
+        stage('Execute') {
+            steps {
+                echo 'Execution stage of pipeline'
+                bat '''java HelloWorld'''
+            }
+        }
+        
+    }
+}
